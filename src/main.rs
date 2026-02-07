@@ -125,7 +125,7 @@ fn main() {
 
     std::println!("{len}");
 
-    // Slice Type
+    // Slice Types
     let mut words = String::from("Xyrel");
 
     let word = first_word(&words);
@@ -133,6 +133,22 @@ fn main() {
     std::println!("{word}");
 
     words.clear();
+
+    let words: String = String::from("Hello World");
+
+    let hello = &words[0..5];
+    let xyrel = &words[6..11];
+
+    std::println!("{hello}");
+    std::println!("{xyrel}");
+
+    let mut check_age = String::new();
+
+    io::stdin().read_line(&mut check_age).expect("Did not read");
+
+    match check_age.parse::<u64>() {
+        Ok(1) => 18,
+    };
 }
 
 fn first_word(s: &String) -> usize {
