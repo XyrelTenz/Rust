@@ -62,9 +62,9 @@ fn main() {
 
     println!("{}", y);
 
-    let isAdult = false;
+    let is_adult = false;
 
-    let age = if isAdult { 5 } else { 6 };
+    let age = if is_adult { 5 } else { 6 };
 
     println!("{age}");
 
@@ -106,6 +106,20 @@ fn main() {
     for j in 1..100 {
         println!("Starts: {}", j);
     }
+
+    // Ownership
+    let s1 = String::from("hello");
+    let s2 = &s1.clone();
+
+    std::println!("{}", s2);
+
+    let s3 = String::from("Hi");
+
+    takes_ownership(s3);
+}
+
+fn takes_ownership(string: String) {
+    println!("{string}");
 }
 
 fn sqr(x: i32, y: i32) -> i32 {
