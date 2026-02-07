@@ -13,14 +13,21 @@ fn main() {
         println!("{x}");
     }
 
+    // Guessing Game
+    // {
+    //     println!("Enter Name: ");
+    //
+    //     let mut guess = String::new();
+    //
+    //     io::stdin()
+    //         .read_line(&mut guess)
+    //         .expect("Failed to read line");
+    //     println!("You guess: {guess}");
+    // }
+
     {
-        std::print!("Enter Name: ");
+        const NAME: &str = "Xyrel";
 
-        let mut guess = String::new();
-
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line");
-        println!("You guess: {guess}");
+        std::println!("{NAME}");
     }
 }
