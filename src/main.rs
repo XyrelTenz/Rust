@@ -116,6 +116,49 @@ fn main() {
     let s3 = String::from("Hi");
 
     takes_ownership(s3);
+
+    let (s2, len) = calculate_length(s1);
+
+    std::println!("The length of {s2} is len{len}");
+
+    let len: usize = calculate(&s2);
+
+    std::println!("{len}");
+
+    // Slice Type
+    let mut words = String::from("Xyrel");
+
+    let word = first_word(&words);
+
+    std::println!("{word}");
+
+    words.clear();
+}
+
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, items) in bytes.iter().enumerate() {
+        if *items == b' ' {
+            return i;
+        }
+    }
+
+    s.len()
+}
+
+fn calculate(s: &str) -> usize {
+    s.len()
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len();
+
+    (s, length)
+}
+
+fn giveback(str: String) -> String {
+    str
 }
 
 fn takes_ownership(string: String) {
