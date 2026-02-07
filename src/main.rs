@@ -1,6 +1,7 @@
 use std::io;
 
-struct Player {}
+//TODO: 1. Holy Trinity
+//TODO: 2. Data Modeling
 
 fn main() {
     // mut = mutuble variable which means we can change or update the variable
@@ -54,6 +55,57 @@ fn main() {
     }
 
     sqr(5, 5);
+    let y = {
+        let x = 10;
+        x + 1
+    };
+
+    println!("{}", y);
+
+    let isAdult = false;
+
+    let age = if isAdult { 5 } else { 6 };
+
+    println!("{age}");
+
+    let password = "xyrel";
+
+    let login = if password == "xyrel" {
+        "Authorized"
+    } else {
+        "unAuthorized"
+    };
+
+    println!("{login}");
+
+    // i = signed
+    // u = unsigned
+
+    // f = float
+    // i = integer
+
+    // Shadowing
+    let year = "2006";
+    let year: i32 = year.parse().unwrap();
+    std::println!("{year}");
+
+    let i: u8 = 10;
+    let j: u8 = 5;
+    std::println!("{}", i);
+    std::println!("{}", i & j);
+    // std::println!("{}", j | i);
+    // std::println!("{}", j ^ i);
+    // std::println!("{}", j << i);
+    // std::println!("{}", j >> i);
+
+    // Loops
+    for i in 1..=5 {
+        println!("Number: {}", i);
+    }
+
+    for j in 1..100 {
+        println!("Starts: {}", j);
+    }
 }
 
 fn sqr(x: i32, y: i32) -> i32 {
