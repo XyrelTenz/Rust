@@ -3,13 +3,18 @@ use std::io;
 //TODO: 1. Holy Trinity
 //TODO: 2. Data Modeling
 
+struct _Models {
+    name: String,
+    age: i64,
+}
+
 fn main() {
     // mut = mutuble variable which means we can change or update the variable
     let mut x = 10;
     println!("{x}");
     x = 5;
     std::println!("{x}");
-    const AGE: &str = "Name";
+    const _AGE: &str = "Name";
 
     // Scope
     {
@@ -89,6 +94,9 @@ fn main() {
     let year: i32 = year.parse().unwrap();
     std::println!("{year}");
 
+    let _nums = 10;
+    let mut _nums: i32 = 10;
+
     let i: u8 = 10;
     let j: u8 = 5;
     std::println!("{}", i);
@@ -146,16 +154,18 @@ fn main() {
 
     io::stdin().read_line(&mut check_age).expect("Did not read");
 
-    match check_age.parse::<u64>() {
-        Ok(1) => 18,
-    };
+    let age = 18;
+
+    let is_adult = if age > 18 { "adult" } else { "minor" };
+
+    std::println!("{}", is_adult);
 }
 
 fn first_word(s: &String) -> usize {
     let bytes = s.as_bytes();
 
-    for (i, items) in bytes.iter().enumerate() {
-        if *items == b' ' {
+    for (i, &items) in bytes.iter().enumerate() {
+        if items == b' ' {
             return i;
         }
     }
@@ -173,7 +183,7 @@ fn calculate_length(s: String) -> (String, usize) {
     (s, length)
 }
 
-fn giveback(str: String) -> String {
+fn _giveback(str: String) -> String {
     str
 }
 
@@ -193,7 +203,7 @@ fn account() {
     println!("Account")
 }
 
-fn guessing() {
+fn _guessing() {
     let mut input_text = String::new();
 
     io::stdin()
@@ -206,4 +216,6 @@ fn guessing() {
         Ok(i) => println!("Your integator input: {}", i),
         Err(..) => println!("not an integet: {}", trimmed),
     }
+
+    static ASSETS: String = String::new();
 }
