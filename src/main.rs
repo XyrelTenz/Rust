@@ -1,12 +1,10 @@
+mod models;
+
+use models::bankmodel::BankModel;
 use std::io;
 
 //TODO: 1. Holy Trinity
 //TODO: 2. Data Modeling
-
-struct _Models {
-    name: String,
-    age: i64,
-}
 
 fn main() {
     // mut = mutuble variable which means we can change or update the variable
@@ -159,6 +157,19 @@ fn main() {
     let is_adult = if age > 18 { "adult" } else { "minor" };
 
     std::println!("{}", is_adult);
+
+    const TASK: i64 = 50;
+    const TIME: i64 = 15 * 60;
+
+    // let total = TASK.parse::<&str>().trim() / TIME.parse::<&str>().trim();
+
+    // std::println!("{}", TOTAL);
+
+    getsize(age.to_string());
+
+    let balance = BankModel::new(100);
+
+    std::println!("{}", balance.balance);
 }
 
 fn first_word(s: &String) -> usize {
@@ -218,4 +229,13 @@ fn _guessing() {
     }
 
     static ASSETS: String = String::new();
+}
+
+// TODO: Fix this tommorow
+fn getsize(n: String) -> (String, u64) {
+    let length = n.len();
+
+    let convert = length as u64;
+
+    (n, convert)
 }
